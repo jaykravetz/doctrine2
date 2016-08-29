@@ -170,9 +170,11 @@ class ResultSetMappingBuilder extends ResultSetMapping
                     $columnAlias = $platform->getSQLResultCasing($columnAliasMap[$columnName]);
                     $columnType = PersisterHelper::getTypeOfColumn($joinColumn['referencedColumnName'], $targetClass, $this->em);
 
+                    /*
                     if (isset($this->metaMappings[$columnAlias])) {
                         throw new \InvalidArgumentException("The column '$columnAlias' conflicts with another column in the mapper.");
                     }
+                    */
 
                     $this->addMetaResult($alias, $columnAlias, $columnName, $isIdentifier, $columnType);
                 }
